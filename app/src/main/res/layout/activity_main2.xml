@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#4CAF50"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".Main2Activity">
+
+    <RadioGroup
+        android:id="@+id/military_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp">
+        <RadioButton
+            android:id="@+id/marine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="육 군 / 해 병 / 의 경\t"
+            android:textColor="#000000"
+            android:textSize="15dp"/>
+        <RadioButton
+            android:id="@+id/navy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="해 군\t"
+            android:textColor="#000000"
+            android:textSize="15dp"/>
+        <RadioButton
+            android:id="@+id/airforce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공 군\t"
+            android:textColor="#000000"
+            android:textSize="15dp"/>
+    </RadioGroup>
+    <ImageView
+        android:id="@+id/military_image"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="2"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="입대 날짜 선택"
+        android:id="@+id/go_to_datepicker"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_date"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+
+</LinearLayout>
