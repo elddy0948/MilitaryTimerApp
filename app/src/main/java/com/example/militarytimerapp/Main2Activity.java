@@ -1,9 +1,11 @@
 package com.example.militarytimerapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,8 @@ public class Main2Activity extends AppCompatActivity {
     View date_view;
     TextView date_text;
     Integer y,m,d;
+    Button gotomain3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class Main2Activity extends AppCompatActivity {
         military_image = (ImageView)findViewById(R.id.military_image);
         date_select = (Button)findViewById(R.id.go_to_datepicker);
         date_text = (TextView)findViewById(R.id.text_date);
+        gotomain3 = (Button)findViewById(R.id.gotomain3);
 
         military_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -64,6 +69,20 @@ public class Main2Activity extends AppCompatActivity {
                 });
                 dv.setNegativeButton("닫기",null);
                 dv.show();
+            }
+        });
+        gotomain3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), Main3Activity.class);
+                    intent.putExtra("enterYear", y);
+                    intent.putExtra("enterMonth", m);
+                    intent.putExtra("enterDate", d);
+                    startActivity(intent);
+                }catch (Exception e){
+
+                }
             }
         });
     }
