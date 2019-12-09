@@ -122,18 +122,18 @@ public class Main3Activity extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-//        show_chronometer.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                progress_view = (View)View.inflate(Main3Activity.this,R.layout.show_chronometer,null);
-//                alertDialog = new AlertDialog.Builder(Main3Activity.this);
-//                alertDialog.setTitle("나의 복무율을 시간으로 치면?");
-//                alertDialog.setView(progress_view);
-//
-//                alertDialog.setNegativeButton("닫기",null);
-//                alertDialog.show();
-//            }
-//        });
+        show_chronometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress_view = (View)View.inflate(Main3Activity.this,R.layout.show_chronometer,null);
+                alertDialog = new AlertDialog.Builder(Main3Activity.this);
+                alertDialog.setTitle("나의 복무율을 시간으로 치면?");
+                alertDialog.setView(progress_view);
+
+                alertDialog.setNegativeButton("닫기",null);
+                alertDialog.show();
+            }
+        });
 
     }
     //dDay 계산하는 함수.
