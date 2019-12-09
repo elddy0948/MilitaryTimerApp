@@ -68,7 +68,6 @@ public class Main3Activity extends AppCompatActivity {
             textView_dDay = (TextView) findViewById(R.id.dDay); // d-Day
 
             show_progress = (Button) findViewById(R.id.show_progress);
-            show_chronometer = (Button) findViewById(R.id.chronometer_btn);
 
 
             enterWhen.setText(y + "년 " + m + "월 " + d + "일");
@@ -122,18 +121,19 @@ public class Main3Activity extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-        show_chronometer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progress_view = (View)View.inflate(Main3Activity.this,R.layout.show_chronometer,null);
-                alertDialog = new AlertDialog.Builder(Main3Activity.this);
-                alertDialog.setTitle("나의 복무율을 시간으로 치면?");
-                alertDialog.setView(progress_view);
 
-                alertDialog.setNegativeButton("닫기",null);
-                alertDialog.show();
+        chronometer = (Chronometer)findViewById(R.id.cm);
+        final long a = (long)did_day;
+        final long b = (long)total_Day;
+        long one_day = -24*60*60*1000;
+        chronometer.setBase(SystemClock.elapsedRealtime()+((one_day*a)/b));
+        chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                chronometer.start();
             }
         });
+
 
     }
     //dDay 계산하는 함수.
