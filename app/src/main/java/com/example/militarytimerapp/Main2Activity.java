@@ -55,7 +55,7 @@ public class Main2Activity extends AppCompatActivity {
         date_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                date_view = (View)View.inflate(Main2Activity.this,R.layout.enter_date,null);
+                try{date_view = (View)View.inflate(Main2Activity.this,R.layout.enter_date,null);
                 AlertDialog.Builder dv = new AlertDialog.Builder(Main2Activity.this);
                 dv.setTitle("입대 날짜 선택");
                 dv.setView(date_view);
@@ -71,7 +71,9 @@ public class Main2Activity extends AppCompatActivity {
                     }
                 });
                 dv.setNegativeButton("닫기",null);
-                dv.show();
+                dv.show();}catch (Exception e){
+
+                }
             }
         });
         gotomain3.setOnClickListener(new View.OnClickListener() {

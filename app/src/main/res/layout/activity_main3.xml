@@ -47,4 +47,15 @@
         android:textSize="20dp"
         android:textColor="#000000"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="복무율 보기"
+        android:id="@+id/show_progress"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나의 군대 시계는?"
+        android:id="@+id/chronometer_btn"/>
+
 </LinearLayout>
