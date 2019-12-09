@@ -22,6 +22,9 @@ public class Main2Activity extends AppCompatActivity {
     View date_view;
     TextView date_text;
     Integer y,m,d;
+    String string_y;
+    String string_m;
+    String string_d;
     Button gotomain3;
 
 
@@ -75,6 +78,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
+//                    string_y = y.toString();
                     Intent intent = new Intent(getApplicationContext(), Main3Activity.class);
                     intent.putExtra("enterYear", y);
                     intent.putExtra("enterMonth", m);
