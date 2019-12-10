@@ -56,6 +56,11 @@
             android:layout_height="wrap_content"
             android:text="시작하기"
             android:textSize="30dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/near_btn"
+            android:text="같은 사단 사람 보기"/>
     </LinearLayout>
 
 

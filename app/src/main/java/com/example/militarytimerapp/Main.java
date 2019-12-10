@@ -1,9 +1,11 @@
 package com.example.militarytimerapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -14,12 +16,16 @@ import android.widget.Toast;
 
 public class Main extends AppCompatActivity {
     Button start_button;
+    Button near_button;
     myDBHelper myHelper;
     SQLiteDatabase sqLiteDatabase;
     EditText enter_name;
     EditText enter_belong;
     String name;
     String belonging;
+    String str1;
+    String str2;
+    Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,7 @@ public class Main extends AppCompatActivity {
         start_button = (Button)findViewById(R.id.start_button);
         enter_name = (EditText)findViewById(R.id.name_et);
         enter_belong = (EditText)findViewById(R.id.belong_et);
+        near_button = (Button)findViewById(R.id.near_btn);
 
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +62,26 @@ public class Main extends AppCompatActivity {
                 }
             }
         });
+        near_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dv = new AlertDialog.Builder(Main.this);
+                dv.setTitle("같은 부대");
+                str1="";
+                belonging=enter_belong.getText().toString();
+                sqLiteDatabase = myHelper.getWritableDatabase();
+                Toast.makeText(getApplicationContext(),belonging,Toast.LENGTH_SHORT).show();
+                cursor = sqLiteDatabase.rawQuery("SELECT * FROM contacts WHERE belong='"+belonging+"'",null);
+                while(cursor.moveToNext()){
+                    str1 +=cursor.getString(1);
+                    str1 += " ";
+                    str1 += cursor.getString(2);
+                    str1 += "\n";
+                }
+                dv.setMessage(str1).setNegativeButton("닫기",null).create().show();
+            }
+        });
+
     }
     public class myDBHelper extends SQLiteOpenHelper{
         public myDBHelper(Context context) {
