@@ -7,11 +7,12 @@
     android:orientation="vertical"
     tools:context=".Main3Activity">
     <TextView
+        android:background="#8BC34A"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="입대일"
-        android:textSize="20dp"
+        android:textSize="40dp"
         android:textColor="#000000"
         android:gravity="center"/>
     <TextView
@@ -19,12 +20,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/enterWhen"
         android:textSize="20dp"
+        android:gravity="center"
         android:textColor="#000000"/>
     <TextView
+        android:layout_marginTop="20dp"
+        android:background="#8BC34A"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전역일"
-        android:textSize="20dp"
+        android:textSize="40dp"
         android:textColor="#000000"
         android:gravity="center"/>
     <TextView
@@ -32,12 +36,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/endWhen"
         android:textSize="20dp"
+        android:gravity="center"
         android:textColor="#000000"/>
     <TextView
+        android:layout_marginTop="20dp"
+        android:background="#8BC34A"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="D-Day"
-        android:textSize="20dp"
+        android:text="복무일"
+        android:textSize="40dp"
         android:textColor="#000000"
         android:gravity="center"/>
     <TextView
@@ -48,16 +55,20 @@
         android:textColor="#000000"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="복무율 보기"
         android:id="@+id/show_progress"/>
 
     <Chronometer
+
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:format="하루 24시간중\n%s\n만큼 복무했습니다."
+        android:textSize="30dp"
         android:id="@+id/cm"/>
     <TextView
         android:layout_width="match_parent"
